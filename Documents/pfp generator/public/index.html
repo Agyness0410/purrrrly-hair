@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Invitation Code Entry -->
+    <div id="codeEntry" class="screen">
+        <div class="container">
+            <h1>Avatar Generator</h1>
+            <div class="code-form">
+                <h2>Enter Invitation Code</h2>
+                <input type="text" id="invitationCode" placeholder="Enter your invitation code" maxlength="32">
+                <button onclick="validateCode()">Enter</button>
+                <div id="codeError" class="error"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Avatar Generator -->
+    <div id="generator" class="screen hidden">
+        <div class="container">
+            <h1>Create Your Avatar</h1>
+            
+            <!-- Avatar Preview -->
+            <div class="preview-section">
+                <div class="avatar-preview">
+                    <canvas id="avatarCanvas" width="400" height="400"></canvas>
+                </div>
+                <div class="preview-controls">
+                    <button id="generateBtn" onclick="generateAvatar()" disabled>
+                        Download Avatar
+                    </button>
+                    <div id="generateStatus" class="status"></div>
+                </div>
+            </div>
+
+            <!-- Trait Selection -->
+            <div class="traits-section">
+                <div id="traitsContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="screen hidden">
+        <div class="container">
+            <h2>Generating your avatar...</h2>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
